@@ -155,3 +155,33 @@ nav a{
 }
 
 }
+form{
+    max-width:700px;
+    margin:auto;
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+form input,
+form select,
+form textarea{
+    padding:15px;
+    border-radius:8px;
+    border:1px solid #444;
+    background:#222;
+    color:white;
+    font-size:16px;
+}
+
+form button{
+    border:none;
+    cursor:pointer;
+}
+
+#status{
+    text-align:center;
+    margin-top:20px;
+    font-size:18px;
+    color:#00ff66;
+}
