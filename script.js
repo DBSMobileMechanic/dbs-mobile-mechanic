@@ -58,3 +58,16 @@ sections.forEach(section => {
 console.log(
 "DBS Mobile Mechanic Website Loaded Successfully"
 );
+// Remove intro after animation
+
+setTimeout(() => {
+
+    const intro = document.querySelector(".logo-intro");
+
+    if(intro){
+
+        intro.style.display="none";
+
+    }
+
+},4500);
