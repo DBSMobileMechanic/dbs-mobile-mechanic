@@ -1,1 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Services | DBS Mobile Mechanic</title>
 
+    <style>
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+            font-family:Arial,Helvetica,sans-serif;
+        }
+
+        body{
+            background:#111;
+            color:#fff;
+        }
+
+        header{
+            background:#c40000;
+            padding:20px;
+            text-align:center;
+        }
+
+        header h1{
+            font-size:2rem;
+        }
+
+        nav{
+            background:#1d1d1d;
+            text-align:center;
+            padding:15px;
+        }
+
+        nav a{
+            color:white;
+            text-decoration:none;
+            margin:0 15px;
+            font-weight:bold;
+        }
+
+        nav a:hover{
+            color:#ff3b3b;
+        }
+
+        .hero{
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        .hero h2{
+            font-size:2.5rem;
+            color:#ff3b3b;
+            margin-bottom:15px;
+        }
+
+        .services{
+            display:grid;
+            grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+            gap:25px;
+            padding:40px;
+            max-width:1200px;
+            margin:auto;
+        }
+
+        .card{
+            background:#1c1c1c;
+            border-radius:10px;
+            padding:25px;
+            border-left:5px solid #c40000;
+            transition:.3s;
+        }
+
+        .card:hover{
+            transform:translateY(-5px);
+            box-shadow:0 0 15px rgba(255,0,0,.4);
+        }
+
+        .card h3{
+            color:#ff3b3b;
+            margin-bottom:10px;
+        }
+
+        .card p{
+            color:#ddd;
+            line-height:1.6;
+        }
+
+        .cta{
+            text-align:center;
+            padding:60px 20px;
+        }
+
+        .btn{
+            display:inline-block;
+            background:#c40000;
+            color:white;
+            text-decoration:none;
+            padding:15px 30px;
+            border-radius:8px;
+            font-weight:bold;
+        }
+
+        .btn:hover{
+            background:#a00000;
+        }
+
+        footer{
+            background:#000;
+            text-align:center;
+            padding:30px;
+            margin-top:40px;
+            color:#aaa;
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <h1>DBS Mobile Mechanic</h1>
+</header>
+
+<nav>
+    <a href="index.html">Home</a>
+    <a href="services.html">Services</a>
+    <a href="appointment.html">Book Appointment</a>
+    <a href="contact.html">Contact</a>
+</nav>
+
+<section class="hero">
+    <h2>Our Services</h2>
+    <p>Professional mobile mechanic services at your home, work, or roadside.</p>
+</section>
+
+<section class="services">
+
+    <div class="card">
+        <h3>🛢 Oil Changes</h3>
+        <p>Full synthetic, synthetic blend, and conventional oil changes with filter replacement.</p>
+    </div>
+
+    <div class="card">
+        <h3>🛑 Brake Service</h3>
+        <p>Brake pads, rotors, calipers, brake bleeding, and electronic parking brake service.</p>
+    </div>
+
+    <div class="card">
+        <h3>🔋 Battery Replacement</h3>
+        <p>Battery testing, replacement, charging system inspections, and terminal cleaning.</p>
+    </div>
+
+    <div class="card">
+        <h3>🔧 Diagnostics</h3>
+        <p>Check engine light scans and troubleshooting using professional diagnostic equipment.</p>
+    </div>
+
+    <div class="card">
+        <h3>🚗 Suspension & Steering</h3>
+        <p>Shocks, struts, tie rods, ball joints, sway bar links, and suspension inspections.</p>
+    </div>
+
+    <div class="card">
+        <h3>❄ Cooling System</h3>
+        <p>Radiators, thermostats, water pumps, coolant flushes, and hose replacements.</p>
+    </div>
+
+    <div class="card">
+        <h3>⚡ Starter & Alternator</h3>
+        <p>Starter motor replacement, alternator replacement, and charging system diagnostics.</p>
+    </div>
+
+    <div class="card">
+        <h3>🛞 Tire Services</h3>
+        <p>Tire changes, rotations, spare tire installation, and flat tire assistance.</p>
+    </div>
+
+</section>
+
+<section class="cta">
+    <h2>Need a Mechanic?</h2>
+    <br>
+    <a href="appointment.html" class="btn">Schedule an Appointment</a>
+</section>
+
+<footer>
+    <h3>DBS Mobile Mechanic</h3>
+    <p>📞 (701) 205-7669</p>
+    <p>📧 dbsmobilemechanic.fm@gmail.com</p>
+    <p>Serving Fargo • Moorhead • West Fargo</p>
+</footer>
+
+</body>
+</html>
