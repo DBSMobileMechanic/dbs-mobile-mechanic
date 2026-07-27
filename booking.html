@@ -1,146 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <title>Book Appointment | DBS Mobile Mechanic</title>
 
-<link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="css/style.css">
 
-<!-- EmailJS -->
-<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-
-<script>
-emailjs.init({
-    publicKey: "XjSMneIvI9AWLLO2K"
-});
-</script>
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;700;900&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
 </head>
 
+
 <body>
 
-<header>
-    <div class="logo">
-        <h1>DBS Mobile Mechanic</h1>
-    </div>
 
-    <nav>
-        <a href="index.html">Home</a>
-        <a href="services.html">Services</a>
-        <a href="booking.html">Book</a>
-        <a href="contact.html">Contact</a>
-    </nav>
+<header>
+
+<div class="logo">
+<span>DBS</span> MOBILE MECHANIC
+</div>
+
+
+<nav>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="booking.html">Book</a>
+<a href="contact.html">Contact</a>
+</nav>
+
 </header>
+
+
+
+
+<section class="hero">
+
+<div class="hero-content">
+
+<h1>
+BOOK <span>SERVICE</span>
+</h1>
+
+<p>
+Tell us what your vehicle needs and we will contact you.
+</p>
+
+</div>
+
+</section>
+
+
+
+
 
 <section class="about">
 
-<h2>Schedule an Appointment</h2>
 
-<form id="appointmentForm">
+<h2>
+Request An Appointment
+</h2>
 
-<input
+
+
+<form id="booking-form">
+
+
+<input 
 type="text"
-name="name"
+name="customer_name"
 placeholder="Full Name"
 required>
 
-<input
+
+
+<input 
 type="tel"
 name="phone"
 placeholder="Phone Number"
 required>
 
-<input
+
+
+<input 
 type="email"
 name="email"
-placeholder="Email Address">
-
-<input
-type="text"
-name="vehicle"
-placeholder="Vehicle (Example: 2016 Ford F-150)"
+placeholder="Email Address"
 required>
 
+
+
+<input 
+type="text"
+name="vehicle"
+placeholder="Vehicle Year, Make & Model"
+required>
+
+
+
+
 <select name="service" required>
-<option value="">Select Service</option>
-<option>Brake Repair</option>
-<option>Brake Bleeding</option>
-<option>Oil Change</option>
-<option>Battery Replacement</option>
-<option>Alternator Replacement</option>
-<option>Starter Replacement</option>
-<option>Diagnostics</option>
-<option>Suspension Repair</option>
-<option>Tire Service</option>
-<option>Other</option>
+
+<option value="">
+Select Service
+</option>
+
+<option>
+Brake Repair
+</option>
+
+<option>
+Oil Change
+</option>
+
+<option>
+Diagnostics
+</option>
+
+<option>
+Battery Service
+</option>
+
+<option>
+Tire Service
+</option>
+
+<option>
+General Repair
+</option>
+
 </select>
 
-<input
+
+
+
+<input 
 type="date"
 name="date"
 required>
 
-<input
-type="time"
-name="time"
-required>
+
+
 
 <textarea
-name="message"
-rows="5"
-placeholder="Describe the repair needed"></textarea>
 
-<button class="btn" type="submit">
-Book Appointment
+name="message"
+
+placeholder="Describe the problem with your vehicle"
+
+rows="5">
+
+</textarea>
+
+
+
+<button 
+type="submit"
+class="btn">
+
+Send Request
+
 </button>
+
 
 </form>
 
-<p id="status"></p>
+
+
+<p id="form-message"></p>
+
 
 </section>
 
+
+
+
+
+
+
+<footer>
+
+<h3>DBS Mobile Mechanic</h3>
+
+<p>
+📞 701-205-7669
+</p>
+
+<p>
+✉ dbsmobilemechanic.fm@gmail.com
+</p>
+
+
+</footer>
+
+
+
+
+
+<!-- EmailJS -->
+
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+
+
 <script>
 
-const form = document.getElementById("appointmentForm");
 
-form.addEventListener("submit", function(e){
+(function(){
 
-e.preventDefault();
+emailjs.init("YOUR_PUBLIC_KEY");
+
+})();
+
+
+
+document.getElementById("booking-form")
+.addEventListener("submit", function(event){
+
+
+event.preventDefault();
+
+
 
 emailjs.sendForm(
-"service_93lbhes",
-"template_x3kevzp",
+
+"YOUR_SERVICE_ID",
+
+"YOUR_TEMPLATE_ID",
+
 this
+
 )
 
 .then(function(){
 
-document.getElementById("status").innerHTML =
-"✅ Appointment request sent successfully!";
 
-setTimeout(function(){
+document.getElementById("form-message").innerHTML =
+"✅ Appointment request sent! We will contact you soon.";
 
-window.location.href="success.html";
 
-},1500);
+document.getElementById("booking-form").reset();
 
-})
 
-.catch(function(error){
+}, function(error){
+
+
+document.getElementById("form-message").innerHTML =
+"❌ Something went wrong. Please call us.";
+
 
 console.log(error);
 
-document.getElementById("status").innerHTML =
-"❌ Failed to send appointment. Please try again.";
 
 });
 
+
 });
+
 
 </script>
 
+
+
 </body>
+
 </html>
