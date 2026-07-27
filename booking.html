@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Book Appointment | DBS Mobile Mechanic</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="css/style.css">
+<title>Book Appointment | DBS Mobile Mechanic</title>
 
-    <!-- EmailJS --> 
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<link rel="stylesheet" href="style.css">
+
+<!-- EmailJS -->
+<script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 
 <script>
 emailjs.init({
@@ -16,9 +17,8 @@ emailjs.init({
 });
 </script>
 
-    <
-
 </head>
+
 <body>
 
 <header>
@@ -36,46 +36,111 @@ emailjs.init({
 
 <section class="about">
 
-<h2>Book Your Appointment</h2>
+<h2>Schedule an Appointment</h2>
 
 <form id="appointmentForm">
 
-<input type="text" id="name" placeholder="Full Name" required>
+<input
+type="text"
+name="name"
+placeholder="Full Name"
+required>
 
-<input type="tel" id="phone" placeholder="Phone Number" required>
+<input
+type="tel"
+name="phone"
+placeholder="Phone Number"
+required>
 
-<input type="email" id="email" placeholder="Email">
+<input
+type="email"
+name="email"
+placeholder="Email Address">
 
-<input type="text" id="vehicle" placeholder="Vehicle (Example: 2016 Ford F-150)" required>
+<input
+type="text"
+name="vehicle"
+placeholder="Vehicle (Example: 2016 Ford F-150)"
+required>
 
-<select id="service" required>
+<select name="service" required>
 <option value="">Select Service</option>
 <option>Brake Repair</option>
 <option>Brake Bleeding</option>
 <option>Oil Change</option>
 <option>Battery Replacement</option>
-<option>Alternator</option>
-<option>Starter</option>
+<option>Alternator Replacement</option>
+<option>Starter Replacement</option>
 <option>Diagnostics</option>
-<option>Suspension</option>
+<option>Suspension Repair</option>
+<option>Tire Service</option>
 <option>Other</option>
 </select>
 
-<input type="date" id="date" required>
+<input
+type="date"
+name="date"
+required>
 
-<input type="time" id="time" required>
+<input
+type="time"
+name="time"
+required>
 
-<textarea id="message" rows="5" placeholder="Describe the problem"></textarea>
+<textarea
+name="message"
+rows="5"
+placeholder="Describe the repair needed"></textarea>
 
-<button class="btn" type="submit">Book Appointment</button>
+<button class="btn" type="submit">
+Book Appointment
+</button>
 
 </form>
 
-<div id="status"></div>
+<p id="status"></p>
 
 </section>
 
-<script src="js/script.js"></script>
+<script>
+
+const form = document.getElementById("appointmentForm");
+
+form.addEventListener("submit", function(e){
+
+e.preventDefault();
+
+emailjs.sendForm(
+"service_93lbhes",
+"template_x3kevzp",
+this
+)
+
+.then(function(){
+
+document.getElementById("status").innerHTML =
+"✅ Appointment request sent successfully!";
+
+setTimeout(function(){
+
+window.location.href="success.html";
+
+},1500);
+
+})
+
+.catch(function(error){
+
+console.log(error);
+
+document.getElementById("status").innerHTML =
+"❌ Failed to send appointment. Please try again.";
+
+});
+
+});
+
+</script>
 
 </body>
 </html>
