@@ -210,7 +210,7 @@ Send Request
 
 (function(){
 
-emailjs.init(XjSMneIvI9AWLLO2K);
+emailjs.init("XjSMneIvI9AWLLO2K");
 
 })();
 
@@ -225,13 +225,9 @@ event.preventDefault();
 
 
 emailjs.sendForm(
-
-service_93lbhes,
-
-template_x3kevzp,
-
-this
-
+  "service_93lbhes",
+  "template_x3kevzp",
+  this
 )
 
 .then(function(){
